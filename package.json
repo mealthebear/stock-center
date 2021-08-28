@@ -1,0 +1,20 @@
+{
+  "name": "stock-center",
+  "version": "1.0.0",
+  "description": "An app for seeing stats about stocks",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mealthebear/stock-center.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mealthebear/stock-center/issues"
+  },
+  "homepage": "https://github.com/mealthebear/stock-center#readme"
+}
