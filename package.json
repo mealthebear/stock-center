@@ -4,7 +4,8 @@
   "description": "An app for seeing stats about stocks",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -d"
+    "build": "webpack",
+    "help": "webpack --help"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/mealthebear/stock-center/issues"
   },
-  "homepage": "https://github.com/mealthebear/stock-center#readme"
+  "homepage": "https://github.com/mealthebear/stock-center#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
 }
