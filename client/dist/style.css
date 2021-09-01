@@ -5,7 +5,12 @@
 
 /* || HOME PAGE PRICE BANNER */
 
+.index-name {
+  font-size: 36px;
+} 
+
 .price-banner {
+  background-color: lightsteelblue;
   display: flex;
   justify-content: space-evenly;
 }
@@ -16,6 +21,3 @@
   font-size: 24px;
 }
 
-.index-name {
-  font-size: 36px;
-}
