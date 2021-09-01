@@ -3,9 +3,9 @@ import PriceBanner from './components/PriceBanner.js';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <PriceBanner />
-    </div>
+    </>
   )
 }
 

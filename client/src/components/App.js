@@ -3,9 +3,9 @@ import Home from '../pages/Home/index.js';
 
 const App = () => {
   return (
-  <div>
+  <>
     <Home />
-  </div>
+  </>
   )
 }
 
