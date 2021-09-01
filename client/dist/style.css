@@ -3,6 +3,8 @@
   padding: 0;
 }
 
+/* || HOME PAGE PRICE BANNER */
+
 .price-banner {
   display: flex;
   justify-content: space-evenly;
@@ -11,4 +13,9 @@
 .stock-index {
   display: flex;
   flex-direction: column;
+  font-size: 24px;
+}
+
+.index-name {
+  font-size: 36px;
 }
