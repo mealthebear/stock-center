@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PriceBanner from './components/PriceBanner.js';
+import PriceBanner from '../../components/PriceBanner.js';
 
 const Home = () => {
   return (
