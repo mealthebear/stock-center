@@ -40,3 +40,28 @@
   padding: 24px;
   text-align: center;
 }
+
+/* || HOME PAGE SEARCH FORM */
+
+.stock-search-form {
+  background-color: #023618;
+  color: #EEE;
+  display: flex;
+  flex-flow: column wrap;
+  height: 200px;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-header {
+  font-size: 32px;
+}
+
+.form-input {
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  margin: 16px auto;
+  padding: 16px 12px;
+  width: 80%;
+}
