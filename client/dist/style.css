@@ -28,6 +28,7 @@
 /* || HOME PAGE COVER PHOTO */
 
 .cover-photo {
+  vertical-align: bottom;
   width: 100%;
 }
 
