@@ -3,16 +3,17 @@ import React, { useState } from 'react';
 const PriceBanner = () => {
   // Add percent change later from data in API
   const mockStockData = [
-    { stock: 'SPY', price: '450' },
-    { stock: 'DJI', price: '35455' },
+    { ticker: 'SPY', price: '450', stock: 'S&P 500 ETF' },
+    { ticker: 'DJI', price: '35455', stock: 'Dow Jones' },
   ];
 
   return (
     <div className='price-banner'>
       {mockStockData.map((stock, index) => {
-        return <div className='stock-index' key={index}>
-          <span className='index-name'>{stock.stock}</span>
-          <span className='index-stats'>{stock.price}</span>
+        return <div className='banner-stock' key={index}>
+          <p className='banner-ticker'>{stock.ticker}</p>
+          <p className='banner-stock'>{stock.stock}</p>
+          <p className='index-stats'>{`$${stock.price}`}</p>
         </div>
       })}
     </div>
