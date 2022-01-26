@@ -12,7 +12,7 @@ const PriceBanner = () => {
       {mockStockData.map((stock, index) => {
         return <div className='banner-stock' key={index}>
           <p className='banner-ticker'>{stock.ticker}</p>
-          <p className='banner-stock'>{stock.stock}</p>
+          <p className='banner-name'>{stock.stock}</p>
           <p className='index-stats'>{`$${stock.price}`}</p>
         </div>
       })}
