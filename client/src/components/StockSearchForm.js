@@ -4,7 +4,7 @@ const StockSearchForm = () => {
   return (
     <form className='stock-search-form'>
       <label className='form-header'>Which stocks strike your fancy today?</label>
-      <input className='form-input' placeholder={`Search - Ex. 'AAPL'`}></input>
+      <input className='form-input' placeholder={`Search - Ex. 'AAPL' or 'Apple'`}></input>
     </form>
   )
 }
