@@ -15,7 +15,7 @@ const getPreviousClose = async (ticker) => {
   const url = `https://api.polygon.io/v2/aggs/ticker/${ticker}/prev`;
   const stockData = await axios.get(url, {
     headers: {
-      Authorization: `Bearer ${STOCKS_API_TOKEN}`,
+      Authorization: `Bearer ${process.env.STOCKS_API_TOKEN}`,
     },
   });
   return stockData;
