@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import getPreviousClose from '../../components/StockAPIUtil.js';
 import PriceBanner from '../../components/PriceBanner.js';
 import CoverPhoto from './CoverPhoto.js';
 import StockSearchForm from '../../components/StockSearchForm.js';
@@ -8,7 +9,7 @@ const Home = () => {
     <>
       <PriceBanner />
       <CoverPhoto />
-      <StockSearchForm />
+      <StockSearchForm getPreviousClose={getPreviousClose}/>
     </>
   )
 }

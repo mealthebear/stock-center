@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import getPreviousClose from '../components/StockAPIUtil.js';
 
-const StockSearchForm = () => {
+const StockSearchForm = ({ getPreviousClose }) => {
   return (
     <form className='stock-search-form' onSubmit={(e) => {
       e.preventDefault();
-      console.log('Did we submit the form?');
-      getPreviousClose()
+      return getPreviousClose();
     }}>
       <label className='form-header'>Which stocks strike your fancy today?</label>
       <input className='form-input' placeholder={`Search - Ex. 'AAPL' or 'Apple'`}></input>
