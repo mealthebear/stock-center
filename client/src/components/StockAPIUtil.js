@@ -21,8 +21,8 @@ const getPreviousClose = async (ticker) => {
   stockResult = stockResult.data.results[0];
   const currentTime = parseTimestampToDate(stockResult.t);
   const stockData = {
-    open: stockResult.o,
     close: stockResult.c,
+    stats: [stockResult.l, stockResult.h],
     date: currentTime.date,
     time: currentTime.time,
   };
