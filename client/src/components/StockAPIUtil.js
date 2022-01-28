@@ -12,14 +12,20 @@ import axios from 'axios';
 // };
 
 const getPreviousClose = async (ticker) => {
-  console.log('****INVOKED PREVIOUS CLOSE FUNCTION****');
   const url = `https://api.polygon.io/v2/aggs/ticker/${'AAPL'}/prev`;
-  const stockData = await axios.get(url, {
+  let stockResult = await axios.get(url, {
     headers: {
       Authorization: `Bearer ${process.env.STOCKS_API_TOKEN}`,
     },
   });
-  console.log(stockData, '*** GOT THE STOCK DATA ***');
+  stockResult = stockResult.data.results[0];
+  const currentTime = parseTimestampToDate(stockResult.t);
+  const stockData = {
+    open: stockResult.o,
+    close: stockResult.c,
+    date: currentTime.date,
+    time: currentTime.time,
+  };
   return stockData;
 };
 
