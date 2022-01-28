@@ -21,6 +21,26 @@ const getPreviousClose = async (ticker) => {
   return stockData;
 };
 
+/**
+ * Converts timestamp in milliseconds to proper date & time.
+ * @param {Number} milliseconds
+ * @returns {Object} Object that has date and time of timestamp.
+ */
+const parseTimestampToDate = (milliseconds) => {
+  const date = new Date();
+  date.setTime(milliseconds);
+  const dateFormat = date.toLocaleDateString();
+  const timeString = date.toLocaleTimeString();
+  const time = timeString.substring(0,4);
+  const amOrPM = timeString.substring(timeString.length - 2);
+  const timeFormat = `${time} ${amOrPM}`;
+  const currentDate = {
+    date: dateFormat,
+    time: timeFormat,
+  };
+  return currentDate;
+}
+
 /* Save function for later */
 // const hasTradingClosed = () => {
 //   /**
