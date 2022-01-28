@@ -5,11 +5,20 @@ import CoverPhoto from './CoverPhoto.js';
 import StockSearchForm from '../../components/StockSearchForm.js';
 
 const Home = () => {
+  const [listOfStocks, setListOfStocks] = useState([]);
+
+  const appendStock = async (e, listOfStocks) => {
+    e.preventDefault();
+    const newStock = await getPreviousClose();
+    listOfStocks.push(newStock);
+    setListOfStocks(listOfStocks);
+  }
+
   return (
     <>
       <PriceBanner />
       <CoverPhoto />
-      <StockSearchForm getPreviousClose={getPreviousClose}/>
+      <StockSearchForm appendStock={appendStock} listOfStocks={listOfStocks} />
     </>
   )
 }
