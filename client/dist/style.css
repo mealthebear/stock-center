@@ -65,3 +65,39 @@
   padding: 16px 12px;
   width: 80%;
 }
+
+/* || STOCK LIST */
+
+.stock-list {
+  padding: 16px;
+}
+
+.stock-card {
+  background-color: #020202;
+  border-radius: 10px;
+  color: #EEE;
+  display: flex;
+  align-content: center;
+  flex-flow: column wrap;
+  margin: 0 auto;
+  padding: 8px 16px;
+  text-align: center;
+  width: 90%;
+}
+
+.stock-name-container {
+  font-size: 20px;
+}
+
+.stock-price-container {
+  font-size: 40px;
+  margin: 16px 0px;
+}
+
+.stock-stats-container {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 24px;
+  justify-content: space-evenly;
+  width: 100%;
+}
