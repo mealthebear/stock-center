@@ -79,7 +79,7 @@
   display: flex;
   align-content: center;
   flex-flow: column wrap;
-  margin: 0 auto;
+  margin: 0 auto 32px;
   padding: 8px 16px;
   text-align: center;
   width: 90%;
