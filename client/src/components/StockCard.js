@@ -10,6 +10,11 @@ const StockCard = ({ stock }) => {
       <div className='stock-price-container'>
         <p>{stock.close}</p>
       </div>
+      <div className='stock-stats-container'>
+        {stock.stats.map((stat, index) => {
+          return <p key={index}>{stat}</p>
+        })}
+      </div>
     </div>
   )
 }
