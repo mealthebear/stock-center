@@ -20,13 +20,28 @@ const getPreviousClose = async (ticker) => {
   });
   stockResult = stockResult.data.results[0];
   const currentTime = parseTimestampToDate(stockResult.t);
+  const roundedClose = roundPriceToTwoDecimals(stockResult.c);
   const stockData = {
-    close: `$${stockResult.c}`,
-    stats: [`Low: ${stockResult.l}`, `High: ${stockResult.h}`],
+    close: `$${roundedClose}`,
+    stats: [
+      `Low: ${roundPriceToTwoDecimals(stockResult.l)}`, 
+      `High: ${roundPriceToTwoDecimals(stockResult.h)}`
+    ],
     date: currentTime.date,
     time: currentTime.time,
   };
   return stockData;
+};
+
+const roundPriceToTwoDecimals = (price) => {
+  let priceString = price.toString();
+  if (!priceString.includes('.')) {
+    return `${priceString}.00`;
+  } else if (priceString.slice(priceString.indexOf('.')).length <= 2) {
+    return `${priceString}0`;
+  } else {
+    return price;
+  };
 };
 
 /**
