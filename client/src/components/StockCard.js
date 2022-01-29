@@ -1,12 +1,15 @@
 import React from 'react';
 
-const StockCard = () => {
+const StockCard = ({ stock }) => {
   return (
     <div className='stock-card'>
-      <p>MSFT</p>
-      <p>Microsoft Corporation</p>
-      <p>$288.49</p>
-      <p>-2.66%</p>
+      <div className='stock-name-container'>
+        <p>AAPL(Placeholder)</p>
+        <p>Apple Inc.(Placeholder)</p>
+      </div>
+      <div className='stock-price-container'>
+        <p>{stock.close}</p>
+      </div>
     </div>
   )
 }

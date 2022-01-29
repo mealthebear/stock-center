@@ -3,6 +3,7 @@ import getPreviousClose from '../../components/StockAPIUtil.js';
 import PriceBanner from '../../components/PriceBanner.js';
 import CoverPhoto from './CoverPhoto.js';
 import StockSearchForm from '../../components/StockSearchForm.js';
+import StockCardList from '../../components/StockCardList.js';
 
 const Home = () => {
   const [listOfStocks, setListOfStocks] = useState([]);
@@ -10,8 +11,9 @@ const Home = () => {
   const appendStock = async (e, listOfStocks) => {
     e.preventDefault();
     const newStock = await getPreviousClose();
-    listOfStocks.push(newStock);
-    setListOfStocks(listOfStocks);
+    const newListOfStocks = [...listOfStocks];
+    newListOfStocks.push(newStock);
+    setListOfStocks(newListOfStocks);
   }
 
   return (
@@ -19,6 +21,7 @@ const Home = () => {
       <PriceBanner />
       <CoverPhoto />
       <StockSearchForm appendStock={appendStock} listOfStocks={listOfStocks} />
+      <StockCardList listOfStocks={listOfStocks} />
     </>
   )
 }
