@@ -78,7 +78,7 @@ const filteredStocksList = (input) => {
       stockList.splice(counter, 1);
       break;
     };
-  }
+  };
   // Second, filter by tickers
   for (let counter = 0; counter < stockList.length; counter++) {
     if (stockList[counter].ticker.slice(0, input.length).toLowerCase() === lowInput) {
@@ -86,23 +86,12 @@ const filteredStocksList = (input) => {
       stockList.splice(counter, 1);
     };
   };
-  // stockList.filter((stock) => {
-  //   if (stock.ticker.slice(0, input.length).toLowerCase() === lowInput) {
-  //     filteredStocks.push(stock);
-  //   };
-  // });
-  // Third, filter by company name
+
   for (let counter = 0; counter < stockList.length; counter++) {
-    if (stockList[counter].name.toLowerCase().includes(lowInput)) {
+    if (stockList[counter].name.slice(0, input.length).toLowerCase() === lowInput) {
       filteredStocks.push(stockList[counter]);
-      // No need for splice since it's the last loop
     };
   };
-  // stockList.filter((stock) => {
-  //   if (stock.name.toLowerCase().includes(lowInput)) {
-  //     filteredStocks.push(stock);
-  //   }
-  // });
   console.log(filteredStocks);
   return filteredStocks;
 }
