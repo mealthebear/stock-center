@@ -56,7 +56,8 @@ const parseTimestampToDate = (milliseconds) => {
 }
 
 const filteredStocksList = (input) => {
-  const stockList = stocks.stocks;
+  if (!input) return [];
+  const stockList = stocks.stocks.slice(0);
   const filteredStocks = [];
   const lowInput = input.toLowerCase();
   // First, find exact ticker if possible
