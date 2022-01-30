@@ -18,7 +18,7 @@ const StockSearchForm = ({ appendStock, listOfStocks }) => {
     <form className='stock-search-form' onSubmit={handleSubmit}>
       <label className='form-header'>Which stocks strike your fancy today?</label>
       <input className='form-input' onChange={handleChange} placeholder={`Search - Ex. 'AAPL' or 'Apple'`}></input>
-      <StocksDropDownMenu stocks={[{name: 'Apple Inc.', ticker: 'AAPL'},{name: 'Microsoft Corporation', ticker: 'MSFT'}]}/>
+      <StocksDropDownMenu stocks={filteredStocks}/>
     </form>
   )
 }
