@@ -1,4 +1,6 @@
 import axios from 'axios';
+// {stocks: [{},{},{},...]}
+import stocks from '../../../stocks.json';
 
 /* Save function for later */
 // const getCurrentDayClose = async (ticker, date) => {
@@ -64,6 +66,32 @@ const parseTimestampToDate = (milliseconds) => {
   return currentDate;
 }
 
+const filteredStocksList = (input) => {
+  const stockList = stocks.stocks;
+  const filteredStocks = [];
+  // First, find exact ticker if possible
+  for (let counter = 0; counter < stockList.length; counter++) {
+    if (stockList[counter].ticker === input) {
+      filteredStocks.push(stockList[counter]);
+      break;
+    };
+  }
+  // Second, filter by tickers
+  stockList.filter((stock) => {
+    if (stock.ticker.slice(0, input.length) === input) {
+      filteredStocks.push(stock);
+    };
+  });
+  // Third, filter by company name
+  stockList.filter((stock) => {
+    if (stock.name.includes(input)) {
+      filteredStocks.push(stock);
+    }
+  });
+  console.log(filteredStocks);
+  return filteredStocks;
+}
+
 /* Save function for later */
 // const hasTradingClosed = () => {
 //   /**
@@ -87,4 +115,7 @@ const parseTimestampToDate = (milliseconds) => {
 //   };
 // };
 
-export default getPreviousClose;
+export {
+  getPreviousClose,
+  filteredStocksList,
+};
