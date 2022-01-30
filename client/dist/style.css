@@ -47,7 +47,7 @@
   background-color: #023618;
   color: #EEE;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   height: 200px;
   justify-content: center;
   text-align: center;
