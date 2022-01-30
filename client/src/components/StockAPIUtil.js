@@ -53,7 +53,7 @@ const parseTimestampToDate = (milliseconds) => {
     time: timeFormat,
   };
   return currentDate;
-}
+};
 
 const filteredStocksList = (input) => {
   if (!input) return [];
@@ -84,7 +84,7 @@ const filteredStocksList = (input) => {
   };
   console.log(filteredStocks);
   return filteredStocks;
-}
+};
 
 export {
   getPreviousClose,
