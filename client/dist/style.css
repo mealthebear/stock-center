@@ -48,7 +48,6 @@
   color: #EEE;
   display: flex;
   flex-flow: column nowrap;
-  height: 200px;
   justify-content: center;
   text-align: center;
 }
