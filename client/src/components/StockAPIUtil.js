@@ -76,7 +76,7 @@ const filteredStocksList = (input) => {
       stockList.splice(counter, 1);
     };
   };
-
+  // Third, filter by company name
   for (let counter = 0; counter < stockList.length; counter++) {
     if (stockList[counter].name.slice(0, input.length).toLowerCase() === lowInput) {
       filteredStocks.push(stockList[counter]);
