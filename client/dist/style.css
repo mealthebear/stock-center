@@ -81,8 +81,11 @@
 }
 
 .dropdown-item {
+  box-sizing: border-box;
   cursor: pointer;
+  padding: 12px;
   transition: 0.3s all;
+  width: 100%;
 }
 
 .dropdown-item:hover {
