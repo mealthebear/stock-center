@@ -69,9 +69,10 @@ const parseTimestampToDate = (milliseconds) => {
 const filteredStocksList = (input) => {
   const stockList = stocks.stocks;
   const filteredStocks = [];
+  const lowInput = input.toLowerCase();
   // First, find exact ticker if possible
   for (let counter = 0; counter < stockList.length; counter++) {
-    if (stockList[counter].ticker === input) {
+    if (stockList[counter].ticker.toLowerCase() === lowInput) {
       filteredStocks.push(stockList[counter]);
       // Prevents duplicates in final result
       stockList.splice(counter, 1);
@@ -80,13 +81,13 @@ const filteredStocksList = (input) => {
   }
   // Second, filter by tickers
   stockList.filter((stock) => {
-    if (stock.ticker.slice(0, input.length) === input) {
+    if (stock.ticker.slice(0, input.length).toLowerCase() === lowInput) {
       filteredStocks.push(stock);
     };
   });
   // Third, filter by company name
   stockList.filter((stock) => {
-    if (stock.name.includes(input)) {
+    if (stock.name.toLowerCase().includes(lowInput)) {
       filteredStocks.push(stock);
     }
   });
