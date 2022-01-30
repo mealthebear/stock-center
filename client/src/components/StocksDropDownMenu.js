@@ -4,7 +4,7 @@ const StocksDropDownMenu = ({ stocks }) => {
   return (
     <div className='stocks-dropdown-menu'>
       {stocks.map((stock) => {
-        return <p>{stock.ticker} - {stock.name}</p>
+        return <p className='dropdown-item'>{stock.ticker} - {stock.name}</p>
       })}
     </div>
   )

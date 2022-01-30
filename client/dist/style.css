@@ -80,6 +80,15 @@
   width: 80%;
 }
 
+.dropdown-item {
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.dropdown-item:hover {
+  background-color: #c1c1c9;
+}
+
 /* || STOCK LIST */
 
 .stock-list {
