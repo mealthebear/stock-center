@@ -59,10 +59,24 @@
 
 .form-input {
   border: none;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
   font-size: 24px;
-  margin: 16px auto;
+  margin: 16px auto 0px;
   padding: 16px 12px;
+  width: 80%;
+}
+
+.stocks-dropdown-menu {
+  border-radius: 0px 0px 10px 10px;
+  background-color: #F8F8FF;
+  color: #020202;
+  display: flex;
+  align-content: flex-start;
+  flex-flow: column wrap;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 16px 12px;
+  text-align: start;
   width: 80%;
 }
 
