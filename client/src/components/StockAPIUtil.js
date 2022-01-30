@@ -80,17 +80,29 @@ const filteredStocksList = (input) => {
     };
   }
   // Second, filter by tickers
-  stockList.filter((stock) => {
-    if (stock.ticker.slice(0, input.length).toLowerCase() === lowInput) {
-      filteredStocks.push(stock);
+  for (let counter = 0; counter < stockList.length; counter++) {
+    if (stockList[counter].ticker.slice(0, input.length).toLowerCase() === lowInput) {
+      filteredStocks.push(stockList[counter]);
+      stockList.splice(counter, 1);
     };
-  });
+  };
+  // stockList.filter((stock) => {
+  //   if (stock.ticker.slice(0, input.length).toLowerCase() === lowInput) {
+  //     filteredStocks.push(stock);
+  //   };
+  // });
   // Third, filter by company name
-  stockList.filter((stock) => {
-    if (stock.name.toLowerCase().includes(lowInput)) {
-      filteredStocks.push(stock);
-    }
-  });
+  for (let counter = 0; counter < stockList.length; counter++) {
+    if (stockList[counter].name.toLowerCase().includes(lowInput)) {
+      filteredStocks.push(stockList[counter]);
+      // No need for splice since it's the last loop
+    };
+  };
+  // stockList.filter((stock) => {
+  //   if (stock.name.toLowerCase().includes(lowInput)) {
+  //     filteredStocks.push(stock);
+  //   }
+  // });
   console.log(filteredStocks);
   return filteredStocks;
 }
