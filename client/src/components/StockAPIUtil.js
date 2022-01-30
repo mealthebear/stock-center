@@ -73,6 +73,8 @@ const filteredStocksList = (input) => {
   for (let counter = 0; counter < stockList.length; counter++) {
     if (stockList[counter].ticker === input) {
       filteredStocks.push(stockList[counter]);
+      // Prevents duplicates in final result
+      stockList.splice(counter, 1);
       break;
     };
   }
