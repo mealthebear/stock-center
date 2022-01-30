@@ -2,17 +2,6 @@ import axios from 'axios';
 // {stocks: [{},{},{},...]}
 import stocks from '../../../stocks.json';
 
-/* Save function for later */
-// const getCurrentDayClose = async (ticker, date) => {
-//   const url = `https://api.polygon.io/v1/open-close/${ticker}/${date}`;
-//   const stockData = await axios.get(url, {
-//     headers: {
-//       Authorization: `Bearer ${STOCKS_API_TOKEN}`,
-//     },
-//   });
-//   return stockData;
-// };
-
 const getPreviousClose = async (ticker) => {
   const url = `https://api.polygon.io/v2/aggs/ticker/${'AAPL'}/prev`;
   let stockResult = await axios.get(url, {
@@ -96,6 +85,23 @@ const filteredStocksList = (input) => {
   return filteredStocks;
 }
 
+export {
+  getPreviousClose,
+  filteredStocksList,
+};
+
+
+/* Save function for later */
+// const getCurrentDayClose = async (ticker, date) => {
+//   const url = `https://api.polygon.io/v1/open-close/${ticker}/${date}`;
+//   const stockData = await axios.get(url, {
+//     headers: {
+//       Authorization: `Bearer ${STOCKS_API_TOKEN}`,
+//     },
+//   });
+//   return stockData;
+// };
+
 /* Save function for later */
 // const hasTradingClosed = () => {
 //   /**
@@ -118,8 +124,3 @@ const filteredStocksList = (input) => {
 //     return false;
 //   };
 // };
-
-export {
-  getPreviousClose,
-  filteredStocksList,
-};
