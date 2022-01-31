@@ -60,6 +60,7 @@
 .form-input {
   border: none;
   border-radius: 10px 10px 0px 0px;
+  box-sizing: border-box;
   font-size: 24px;
   margin: 16px auto 0px;
   padding: 16px 12px;
@@ -69,13 +70,14 @@
 .stocks-dropdown-menu {
   border-radius: 0px 0px 10px 10px;
   background-color: #F8F8FF;
+  box-sizing: border-box;
   color: #020202;
   display: flex;
   align-content: flex-start;
   flex-flow: column wrap;
   font-size: 20px;
   margin: 0 auto;
-  padding: 16px 12px;
+  padding: 16px 0px;
   text-align: start;
   width: 80%;
 }
