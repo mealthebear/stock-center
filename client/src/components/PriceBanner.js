@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const PriceBanner = () => {
   // Add percent change later from data in API
   const mockStockData = [
-    { ticker: 'SPY', price: '450', stock: 'S&P 500 ETF' },
-    { ticker: 'DJI', price: '35455', stock: 'Dow Jones' },
+    { ticker: 'SPY', price: '441.95', stock: 'S&P 500 ETF' },
+    { ticker: 'DJI', price: '34725.47', stock: 'Dow Jones' },
   ];
 
   return (
