@@ -2,7 +2,7 @@ import axios from 'axios';
 // {stocks: [{},{},{},...]}
 import stocks from '../../../stocks.json';
 
-const getPreviousClose = async (ticker) => {
+const getPreviousClose = async (ticker, name) => {
   const url = `https://api.polygon.io/v2/aggs/ticker/${ticker}/prev`;
   let stockResult = await axios.get(url, {
     headers: {
@@ -20,6 +20,7 @@ const getPreviousClose = async (ticker) => {
     ],
     date: currentTime.date,
     time: currentTime.time,
+    name: name,
     ticker: stockResult['T'],
   };
   return stockData;

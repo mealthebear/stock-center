@@ -5,7 +5,7 @@ const StockCard = ({ stock }) => {
     <div className='stock-card'>
       <div className='stock-name-container'>
         <p>{stock.ticker}</p>
-        <p>Apple Inc.(Placeholder)</p>
+        <p>{stock.name}</p>
       </div>
       <div className='stock-price-container'>
         <p>{stock.close}</p>
