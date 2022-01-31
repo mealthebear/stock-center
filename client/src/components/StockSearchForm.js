@@ -31,7 +31,7 @@ const StockSearchForm = ({ appendStock, listOfStocks }) => {
     <form className='stock-search-form' onSubmit={handleSubmit}>
       <label className='form-header'>Which stocks strike your fancy today?</label>
       <input className='form-input' onChange={handleChange} placeholder={`Search - Ex. 'AAPL' or 'Apple'`}></input>
-      <StocksDropDownMenu stocks={filteredStocks}/>
+      <StocksDropDownMenu handleSubmit={handleSubmit} stocks={filteredStocks}/>
     </form>
   )
 }
