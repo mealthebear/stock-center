@@ -4,7 +4,7 @@ const StockCard = ({ stock }) => {
   return (
     <div className='stock-card'>
       <div className='stock-name-container'>
-        <p>AAPL(Placeholder)</p>
+        <p>{stock.ticker}</p>
         <p>Apple Inc.(Placeholder)</p>
       </div>
       <div className='stock-price-container'>

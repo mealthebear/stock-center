@@ -20,6 +20,7 @@ const getPreviousClose = async (ticker) => {
     ],
     date: currentTime.date,
     time: currentTime.time,
+    ticker: stockResult['T'],
   };
   return stockData;
 };
