@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 
 const StockDropDownItem = ({ handleSubmit, stock }) => {
-  const [name, setName] = useState(stock.name);
-  const [ticker, setTicker] = useState(stock.ticker);
 
   return (
-    <p 
-      className='dropdown-item' 
+    <p
+      ariaDescription={stock.name}
+      ariaLabel={stock.ticker}
+      className='dropdown-item'
       onClick={(e) => {
-        console.log(name, ticker, 'Just clicked this stock!');
-        handleSubmit(e, ticker, name)
+        handleSubmit(e, e.target.attributes.arialabel.nodeValue, e.target.attributes.ariadescription.nodeValue);
     }}
     >
       {stock.ticker} - {stock.name}
