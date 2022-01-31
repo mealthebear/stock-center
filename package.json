@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "buildDeploy": "rm -r ~/Desktop/stock_deploy/dist && cp -R client/dist ~/Desktop/stock_deploy",
     "start": "nodemon server"
   },
   "repository": {
