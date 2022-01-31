@@ -3,7 +3,7 @@ import axios from 'axios';
 import stocks from '../../../stocks.json';
 
 const getPreviousClose = async (ticker) => {
-  const url = `https://api.polygon.io/v2/aggs/ticker/${'AAPL'}/prev`;
+  const url = `https://api.polygon.io/v2/aggs/ticker/${ticker}/prev`;
   let stockResult = await axios.get(url, {
     headers: {
       Authorization: `Bearer ${process.env.STOCKS_API_TOKEN}`,

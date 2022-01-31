@@ -8,9 +8,9 @@ import StockCardList from '../../components/StockCardList.js';
 const Home = () => {
   const [listOfStocks, setListOfStocks] = useState([]);
 
-  const appendStock = async (e, listOfStocks) => {
+  const appendStock = async (e, listOfStocks, ticker) => {
     e.preventDefault();
-    const newStock = await getPreviousClose();
+    const newStock = await getPreviousClose(ticker);
     const newListOfStocks = [...listOfStocks];
     newListOfStocks.push(newStock);
     setListOfStocks(newListOfStocks);

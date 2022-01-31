@@ -12,7 +12,7 @@ const StockSearchForm = ({ appendStock, listOfStocks }) => {
     if (!filteredList.length || filteredList.length > 1) {
       setFilteredStocks(filteredList);
     } else {
-      appendStock(e, listOfStocks);
+      appendStock(e, listOfStocks, filteredList[0].ticker);
     };
   };
 
