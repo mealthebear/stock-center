@@ -33,7 +33,7 @@ const roundPriceToTwoDecimals = (price) => {
   } else if (priceString.slice(priceString.indexOf('.')).length <= 2) {
     return `${priceString}0`;
   } else {
-    return price;
+    return price.toFixed(2);
   };
 };
 
