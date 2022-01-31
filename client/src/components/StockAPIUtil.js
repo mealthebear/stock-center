@@ -55,7 +55,7 @@ const parseTimestampToDate = (milliseconds) => {
   return currentDate;
 };
 
-const filteredStocksList = (input) => {
+const filteredStocksList = (input, submitOption) => {
   if (!input) return [];
   const stockList = stocks.stocks.slice(0);
   const filteredStocks = [];
@@ -64,6 +64,7 @@ const filteredStocksList = (input) => {
   for (let counter = 0; counter < stockList.length; counter++) {
     if (stockList[counter].ticker.toLowerCase() === lowInput) {
       filteredStocks.push(stockList[counter]);
+      if (submitOption) return filteredStocks;
       // Prevents duplicates in final result
       stockList.splice(counter, 1);
       break;
@@ -90,6 +91,36 @@ export {
   getPreviousClose,
   filteredStocksList,
 };
+
+// const submitFilter = (input) => {
+//   if (!input) return [];
+//   const stockList = stocks.stocks.slice(0);
+//   const filteredStocks = [];
+//   const lowInput = input.toLowerCase();
+//   // If exact ticker found, return only that ticker
+//   for (let counter = 0; counter < stockList.length; counter++) {
+//     if (stockList[counter].ticker.toLowerCase() === lowInput) {
+//       filteredStocks.push(stockList[counter]);
+//       return filteredStocks;
+//     };
+//   };
+
+//   // Next, filter by beginning tickers
+//   for (let counter = 0; counter < stockList.length; counter++) {
+//     if (stockList[counter].ticker.slice(0, input.length).toLowerCase() === lowInput) {
+//       filteredStocks.push(stockList[counter]);
+//       stockList.splice(counter, 1);
+//     };
+//   };
+
+//   // Lastly, filter by company name
+//   for (let counter = 0; counter < stockList.length; counter++) {
+//     if (stockList[counter].name.slice(0, input.length).toLowerCase() === lowInput) {
+//       filteredStocks.push(stockList[counter]);
+//     };
+//   };
+//   return filteredStocks;
+// }
 
 
 /* Save function for later */
