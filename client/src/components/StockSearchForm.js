@@ -6,13 +6,13 @@ const StockSearchForm = ({ appendStock, listOfStocks }) => {
   const [filteredStocks, setFilteredStocks] = useState([]);
 
   const handleSubmit = (e) => {
-    const filteredList = filteredStocksList(e.target.value);
+    e.preventDefault();
+    const filteredList = filteredStocksList(e.target.value, true);
     if (!filteredList.length || filteredList.length > 1) {
       setFilteredStocks(filteredList);
     } else {
       appendStock(e, listOfStocks);
-    }
-    // appendStock(e, listOfStocks);
+    };
   };
 
   const handleChange = (e) => {
